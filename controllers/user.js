@@ -19,8 +19,15 @@ const getAll = async ( req = request, res = response ) => {
 
 const create = async( req = request, res = response ) => {
 
-    const body = req.body;
+    const {nombre, apellido, edad, email} = req.body;
 
+    user.nombre = nombre,
+    user.apellido = apellido,
+    user.edad = edad,
+    user.email = email,
+
+    await user.createUser();
+    
     res.status(200).json({
         msg: 'post create user',
         body
