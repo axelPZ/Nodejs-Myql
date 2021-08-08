@@ -27,10 +27,11 @@ const create = async( req = request, res = response ) => {
     user.email = email,
 
     await user.createUser();
+
+
     
     res.status(200).json({
-        msg: 'post create user',
-        body
+        msg: 'usuario creado',
     });
 }
 
